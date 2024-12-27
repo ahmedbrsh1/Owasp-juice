@@ -46,9 +46,10 @@ Remediation Steps:
 
 Restrict access to sensitive paths using authentication and authorization mechanisms.
 Implement security through obscurity by randomizing or hiding admin URLs.
+Vulnerability Findings
 2. Brute Force on Admin Credentials
 Description:
-The admin login page lacks protections against brute-force attacks, enabling attackers to guess passwords using tools like Hydra.
+The admin login page lacks protections against brute-force attacks, enabling attackers to guess passwords using tools like Burp Suite.
 
 Risk:
 Critical. This vulnerability allows unauthorized access to admin accounts, granting full control of the application.
@@ -58,28 +59,13 @@ Compromise of administrative privileges can lead to data breaches, application m
 
 Evidence:
 
-Using Hydra with admin@juice-sh.op, brute-force testing successfully cracked the password.
+Using Burp Suite, we conducted a brute-force attack with the known email admin@juice-sh.op, which successfully cracked the password.
 Remediation Steps:
+![Brute Force](screenshots/Screenshot_2024-12-27_194424.png)
 
 Implement rate-limiting and CAPTCHA mechanisms.
 Introduce account lockout policies after repeated failed login attempts.
-3. XSS in Product Search
-Description:
-The product search feature fails to sanitize user input, allowing the execution of malicious scripts.
 
-Risk:
-High. Cross-Site Scripting can be used to steal session cookies, redirect users, or conduct phishing attacks.
-
-Potential Impact:
-Exploitation of XSS can compromise user data and reduce trust in the application.
-
-Evidence:
-
-Inputting <script>alert('XSS')</script> in the search bar resulted in an alert pop-up.
-Remediation Steps:
-
-Validate and sanitize all user inputs.
-Use Content Security Policy (CSP) headers to mitigate XSS risks.
 4. SQL Injection
 Description:
 The application does not properly sanitize inputs in certain fields, making it vulnerable to SQL injection.
