@@ -118,6 +118,29 @@ Attackers may view, modify, or delete sensitive data.
 
 ---
 
+### 5. Insecure Direct Object Reference (IDOR) in Basket ID
+
+**Description:**  
+The application allows users to modify the `bid` (basket ID) in session storage. Changing this ID allows one user to view or modify another user's basket.
+
+**Risk:**  
+**High.** This vulnerability compromises data integrity and privacy by allowing unauthorized access to another user's data.
+
+**Potential Impact:**  
+- Attackers can view sensitive user information in the basket (e.g., items, quantities, prices).
+- Attackers can manipulate the basket's contents, leading to potential fraud or disruption of service.
+
+**Evidence:**  
+- By modifying the `bid` value in session storage to another user's basket ID, the contents of that user's basket were displayed.
+- ![Basket](screenshots/Screenshot2024-12-27233227.png)
+
+**Remediation Steps:**  
+1. Implement server-side authorization checks to ensure users can only access their own basket.
+2. Avoid relying solely on client-side data for critical identifiers.
+3. Use secure, non-guessable IDs (e.g., UUIDs) for resources.
+
+---
+
 ## Exploitation and Attack Simulation
 
 ### Tools and Techniques Used
@@ -152,3 +175,6 @@ The combination of authentication issues, input validation vulnerabilities, and 
 1. Implement secure coding practices, such as input validation and parameterized queries.
 2. Introduce rate-limiting and CAPTCHA to prevent brute-force attacks.
 3. Conduct regular security assessments to ensure ongoing protection against emerging threats.
+
+
+
