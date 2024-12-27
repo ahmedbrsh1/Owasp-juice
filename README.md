@@ -156,6 +156,7 @@ The application allows users to edit the quantity of an item by intercepting the
 **Evidence:**  
 - Using Burp Suite, the "Add to Basket" request was intercepted, and the quantity field was changed to `-10`.  
 - On checkout, the total price was calculated as a negative amount, which was refunded to the user's payment method.
+  ![Negative Quanitiy](screenshots/Screenshot2024-12-28013634.png)
 
 **Remediation Steps:**  
 1. Validate user inputs on the server side to ensure the quantity is always a positive integer.
