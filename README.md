@@ -52,6 +52,7 @@ An attacker may gain access to sensitive admin features and exploit them to comp
 
 **Evidence:**  
 - Example: Enumerating paths such as `/admin` using **ffuf** revealed the admin login page.
+- ![Enumeration](screenshots/Screenshot2024-12-27203119.png)
 
 **Remediation Steps:**  
 - Restrict access to sensitive paths using authentication and authorization mechanisms.
@@ -70,7 +71,8 @@ Critical. This vulnerability allows unauthorized access to admin accounts, grant
 Compromise of administrative privileges can lead to data breaches, application misconfigurations, and more.
 
 **Evidence:**  
-- Using **Burp Suite**, we conducted a brute-force attack with the known email `admin@juice-sh.op`, which successfully cracked the password.  
+- Using **Burp Suite**, we conducted a brute-force attack with the known email `admin@juice-sh.op`, which successfully cracked the password.
+- ![Brute Force](screenshots/Screenshot2024-12-27194424.png)
 
 **Remediation Steps:**  
 - Implement rate-limiting and CAPTCHA mechanisms.
