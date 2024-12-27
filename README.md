@@ -1,10 +1,10 @@
 # Owasp-juice
 
-##Executive Summary
+## Executive Summary
 Purpose of the Test:
 To identify and exploit vulnerabilities in the OWASP Juice Shop application, demonstrating common web application security flaws.
 
-##Key Findings:
+## Key Findings:
 
 Vulnerable to URL enumeration, leading to unauthorized admin path discovery.
 Lack of rate-limiting enables brute-force attacks on admin credentials.
@@ -17,7 +17,7 @@ Enforce rate-limiting and account lockout mechanisms.
 Validate and sanitize all user inputs to prevent XSS and SQL injection attacks.
 Conduct regular security testing to identify and mitigate vulnerabilities.
 
-##Scope and Methodology
+## Scope and Methodology
 Scope:
 
 Application: OWASP Juice Shop website.
