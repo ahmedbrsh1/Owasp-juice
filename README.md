@@ -1,10 +1,10 @@
 # Owasp-juice
 
-Executive Summary
+##Executive Summary
 Purpose of the Test:
 To identify and exploit vulnerabilities in the OWASP Juice Shop application, demonstrating common web application security flaws.
 
-Key Findings:
+##Key Findings:
 
 Vulnerable to URL enumeration, leading to unauthorized admin path discovery.
 Lack of rate-limiting enables brute-force attacks on admin credentials.
@@ -16,7 +16,8 @@ Implement proper access controls to secure hidden paths.
 Enforce rate-limiting and account lockout mechanisms.
 Validate and sanitize all user inputs to prevent XSS and SQL injection attacks.
 Conduct regular security testing to identify and mitigate vulnerabilities.
-Scope and Methodology
+
+##Scope and Methodology
 Scope:
 
 Application: OWASP Juice Shop website.
@@ -28,7 +29,7 @@ Tools Used:
 
 Burp Suite
 Gobuster
-Vulnerability Findings
+##Vulnerability Findings
 1. Enumeration to Find Admin Path
 Description:
 The application exposes hidden paths that attackers can discover by analyzing the URL structure or using enumeration tools like ffuf.
