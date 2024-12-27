@@ -61,7 +61,7 @@ Evidence:
 
 Using Burp Suite, we conducted a brute-force attack with the known email admin@juice-sh.op, which successfully cracked the password.
 Remediation Steps:
-![Brute Force](screenshots/Screenshot_2024-12-27_194424.png)
+![Brute Force](screenshots/Screenshot2024-12-27194424.png)
 
 Implement rate-limiting and CAPTCHA mechanisms.
 Introduce account lockout policies after repeated failed login attempts.
