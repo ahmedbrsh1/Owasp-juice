@@ -41,7 +41,8 @@ An attacker may gain access to sensitive admin features and exploit them to comp
 
 Evidence:
 
-Example: Enumerating paths such as /admin using ffuf revealed the admin login page.
+Example: Enumerating paths such as /admin using ffuf revealed the admin page.
+![Brute Force](screenshots/Screenshot2024-12-27203119.png)
 Remediation Steps:
 
 Restrict access to sensitive paths using authentication and authorization mechanisms.
@@ -60,8 +61,9 @@ Compromise of administrative privileges can lead to data breaches, application m
 Evidence:
 
 Using Burp Suite, we conducted a brute-force attack with the known email admin@juice-sh.op, which successfully cracked the password.
-Remediation Steps:
 ![Brute Force](screenshots/Screenshot2024-12-27194424.png)
+Remediation Steps:
+
 
 Implement rate-limiting and CAPTCHA mechanisms.
 Introduce account lockout policies after repeated failed login attempts.
