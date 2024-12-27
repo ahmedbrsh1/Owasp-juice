@@ -141,6 +141,29 @@ The application allows users to modify the `bid` (basket ID) in session storage.
 
 ---
 
+### 6. Negative Quantity Exploit in Basket
+
+**Description:**  
+The application allows users to edit the quantity of an item by intercepting the "Add to Basket" request using Burp Suite. This includes setting the quantity to a negative value, which results in the website paying the user instead of charging them during checkout.
+
+**Risk:**  
+**Critical.** This vulnerability can cause significant financial loss and disrupt business operations.
+
+**Potential Impact:**  
+- Attackers can exploit this to generate a negative total, leading to financial gains for them at the cost of the application owner.
+- Could be exploited repeatedly, resulting in massive losses.
+
+**Evidence:**  
+- Using Burp Suite, the "Add to Basket" request was intercepted, and the quantity field was changed to `-10`.  
+- On checkout, the total price was calculated as a negative amount, which was refunded to the user's payment method.
+
+**Remediation Steps:**  
+1. Validate user inputs on the server side to ensure the quantity is always a positive integer.
+2. Implement input sanitation to prevent manipulation of critical fields in requests.
+3. Add checks during checkout to ensure totals are always greater than or equal to zero.
+4. Log and monitor unusual activities, such as negative quantities or totals.
+
+
 ## Exploitation and Attack Simulation
 
 ### Tools and Techniques Used
